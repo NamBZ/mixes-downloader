@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+#skip real files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^search/$ search.php [L,QSA]
+RewriteRule ^search$ search.php [L,QSA]
+RewriteRule ^(.+)/(.+)/$ cast.php?username=$1&slug=$2 [L,QSA]
+RewriteRule ^(.*?)/$ user.php?username=$1 [L,QSA]
+RewriteRule ^(cache/|submit\.php|head\.php|head_mobile\.php|foot\.php|foot_mobile\.php|includes\.php|config\.php) - [F,L,NC]
+RewriteRule ^sitemap.xml$ /sitemap.php [L]
+RewriteRule ^dmca$ /dmca.php
+RewriteRule ^privacy$ /privacy.php
+RewriteRule ^contact$ /contact.php
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+ErrorDocument 403 /404.php
+ErrorDocument 404 /404.php
+ErrorDocument 405 /404.php
+ErrorDocument 408 /404.php
+ErrorDocument 500 /404.php
+ErrorDocument 504 /404.php
+ErrorDocument 502 /404.php

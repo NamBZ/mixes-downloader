@@ -1,0 +1,254 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.zaudio_wrapper{
+	display: flex;
+	flex-direction: column;
+	margin:5px 0 5px 0;
+}
+
+.zaudio_wrapper_min{
+	flex-basis: 320px;
+}
+
+.zaudio_wrapper_noplaylist{
+	flex-basis: 500px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.zaudio_playlist{
+	margin:0px;
+	padding:0px;
+	background: #fff;
+	box-shadow: 0px 0px 5px #a2a2a2;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	max-height: 0px;
+	transition: max-height 400ms cubic-bezier(0.87, -0.01, 0.15, 0.98);
+	overflow-y: scroll;
+}
+
+.zaudio_playlist::-webkit-scrollbar{
+	width: 6px;
+}
+
+.zaudio_playlist::-webkit-scrollbar-track {
+    background-color: #e6e6e6;
+}
+
+.zaudio_playlist::-webkit-scrollbar-thumb {
+  background-color: #b4b4b4;
+}
+
+.zaudio_playlist li{
+	cursor: pointer;
+	padding:8px;
+	color: #666;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+}
+
+.zaudio_playlist li span:nth-of-type(1){
+	font-weight: 500;
+}
+
+.zaudio_playlist li span:nth-of-type(2){
+	color:#b3b3b3;
+}
+
+.zaudio_playlist li span {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.zaudio_playlist li:hover{
+	background-color: #f2f2f2;
+}
+
+.zaudio_playlist li img{
+	height: 34px;
+	width: 34px;
+}
+
+.zaudio_stream_circle{
+	background-color:#9deb45;
+	right:5px;
+	top:5px;
+	height:15px;
+	width:15px;
+	border-radius:10px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.zaudio_container{
+	display:flex;
+	flex-wrap: nowrap;
+	background-color:#fff;
+	z-index: 1;
+}
+
+.zaudio_art{
+	min-width:166px;
+	min-height:166px;
+	background-color:#eee;
+ 	background-size:cover;
+	transition: background-image .5s ease-in;
+}
+
+.zaudio_songtitle{
+	color:#757575;
+	font-size:22px;
+	font-weight:500;
+}
+
+.zaudio_songartist{
+	font-size:16px;
+	margin-top: 5px;
+	font-weight: 400;
+	color:#C1C1C1;
+
+}
+
+.zaudio_seekbar{
+	flex-grow: 1;
+	display: flex;
+	padding: 5px;
+	align-items: center;
+}
+
+
+.zaudio_seekbg{
+	cursor: pointer;
+	height:8px;
+	border-radius: 4px;
+	flex:1;
+	background-color: #E6E6E6;
+}
+
+.zaudio_seekfill{
+	height: 8px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background-color: #FF9900;
+	width: 0%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	overflow: visible;
+}
+
+.zaudio_playercontrolbuttons i{
+	cursor: pointer;
+}
+
+.zaudio_btn_stop, .zaudio_btn_repeat, .zaudio_btn_mute{
+	padding: 15px;
+}
+
+.zaudio_buttonwrapper{
+	flex-direction:row;
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+}
+
+.zaudio_btn_play{
+	font-size:54px;
+}
+
+.zaudio_playercontrolbuttons i:hover{
+	transition: all 0.5s;
+	background-color: #eeeeee;
+	border-radius: 32px;
+}
+
+.zaudio_seeker{
+	margin-right: -7px;
+	height: 14px;
+	min-width: 14px;
+	border-radius: 10px;
+	border: 2px solid #FF9900;
+	background-color: white;
+}
+
+.zaudio_tracktime{
+	font-size: 12px;
+	color:#333;
+	font-weight: 500;
+	padding-left: 10px;
+}
+
+.zaudio_tracktime_mini{
+	font-size:22px;
+
+}
+
+.zaudio_trackinfo{
+	display: flex;
+	flex-direction:column;
+}
+
+.zaudio_playercontrols{
+	display:flex;
+	flex-grow: 1;
+	flex-direction:column;
+}
+
+.zaudio_icons{
+	color: #3E3E3E;
+}
+
+.zaudio_playercontrolbuttons{
+	flex-grow:1;
+	display: flex;
+	margin-right: 5px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.zaudio_player{
+	display:flex;
+	flex-direction:column;
+	flex-grow: 1;
+	padding:10px;
+}
+
+.zaudio_spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width:600px) {
+	.zaudio_art{
+		flex:1;
+		min-height: 300px;
+		background-position: center;
+		background-color: #5e5e5e;
+		display: flex;
+		justify-content: center;
+	}
+	.zaudio_container {
+		flex-wrap: wrap;
+	}
+}
